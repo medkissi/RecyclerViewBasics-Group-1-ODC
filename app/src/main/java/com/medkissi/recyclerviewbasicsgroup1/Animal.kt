@@ -1,10 +1,12 @@
 package com.medkissi.recyclerviewbasicsgroup1
 
+import java.io.Serializable
+
 class Animal(
     val nom: String,
     val vitesse:Int,
     val image:Int
-)
+):Serializable
 
 val animaux = listOf<Animal>(
     Animal("Lion",54, R.drawable.lion),

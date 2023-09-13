@@ -1,11 +1,13 @@
 package com.medkissi.recyclerviewbasicsgroup1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
+const val  ANIMAL_KEY = "animal"
 class MainActivity : AppCompatActivity(), OnItemClickListner {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +22,8 @@ class MainActivity : AppCompatActivity(), OnItemClickListner {
     }
 
     override fun onClick(animal: Animal) {
-       Toast.makeText(this,"Je suis un ${animal.nom} et j'ai une vitesse de  ${animal.vitesse} km/h",Toast.LENGTH_SHORT).show()
+       val intent = Intent(this,DetailActivity::class.java)
+        intent.putExtra(ANIMAL_KEY,animal)
+        startActivity(intent)
     }
 }
