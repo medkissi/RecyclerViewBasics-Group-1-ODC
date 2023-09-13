@@ -5,16 +5,26 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
-
-class AnimalAdapter(val data: List<Animal>) : Adapter<AnimalAdapter.AnimalViewHolder>() {
 
 
-    class AnimalViewHolder(itemView: View) : ViewHolder(itemView.rootView) {
+class AnimalAdapter(
+    val data: List<Animal>,
+    val listner:OnItemClickListner
+    ) : Adapter<AnimalAdapter.AnimalViewHolder>() {
+
+    inner class AnimalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView.rootView) {
         val image = itemView.findViewById<ImageView>(R.id.img)
         val nom = itemView.findViewById<TextView>(R.id.tv_nom)
         val vitesse = itemView.findViewById<TextView>(R.id.tv_vitesse)
+        init {
+            itemView.setOnClickListener {
+                if(adapterPosition != RecyclerView.NO_POSITION){}
+                val animal = data.get(adapterPosition)
+                listner.onClick(animal)
+            }
+        }
 
         fun bind(animal: Animal) {
             image.setImageResource(animal.image)
@@ -24,6 +34,7 @@ class AnimalAdapter(val data: List<Animal>) : Adapter<AnimalAdapter.AnimalViewHo
 
 
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimalViewHolder {
 
@@ -45,4 +56,8 @@ class AnimalAdapter(val data: List<Animal>) : Adapter<AnimalAdapter.AnimalViewHo
     }
 
 
+}
+
+interface OnItemClickListner{
+    fun onClick(animal:Animal)
 }
