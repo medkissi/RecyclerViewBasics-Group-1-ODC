@@ -16,11 +16,11 @@ class PresidentActivity : AppCompatActivity(), OnPresidentClickListner {
 
         val adapter = PresidentAdapter(this )
         val linearLayoutManager = LinearLayoutManager(this)
-        val  rv = findViewById<RecyclerView>(R.id.rv_president)
-        rv.adapter = adapter
-        rv.layoutManager =linearLayoutManager
-
+        val recyclerView = findViewById<RecyclerView>(R.id.rv_president)
+        recyclerView.layoutManager = linearLayoutManager
+        recyclerView.adapter = adapter
         adapter.submitList(presidents)
+
     }
 
     override fun onClick(president: President) {

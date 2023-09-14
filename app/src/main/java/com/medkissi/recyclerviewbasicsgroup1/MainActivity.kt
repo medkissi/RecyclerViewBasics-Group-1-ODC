@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity(), OnItemClickListner {
         val rv = findViewById<RecyclerView>(R.id.rv)
         val adapter = AnimalAdapter(animaux,this)
         val layoutManager = LinearLayoutManager(this )
+
         rv.layoutManager = layoutManager
         rv.adapter = adapter
 
