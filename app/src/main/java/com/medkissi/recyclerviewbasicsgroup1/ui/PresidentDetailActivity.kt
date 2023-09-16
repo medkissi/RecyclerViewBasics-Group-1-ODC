@@ -1,9 +1,10 @@
-package com.medkissi.recyclerviewbasicsgroup1
+package com.medkissi.recyclerviewbasicsgroup1.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import com.medkissi.recyclerviewbasicsgroup1.R
 import com.medkissi.recyclerviewbasicsgroupe2.model.President
 
 class PresidentDetailActivity : AppCompatActivity() {

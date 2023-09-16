@@ -1,12 +1,14 @@
-package com.medkissi.recyclerviewbasicsgroup1
+package com.medkissi.recyclerviewbasicsgroup1.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.medkissi.recyclerviewbasicsgroup1.adapters.AnimalAdapter
+import com.medkissi.recyclerviewbasicsgroup1.adapters.OnItemClickListner
+import com.medkissi.recyclerviewbasicsgroup1.R
 import com.medkissi.recyclerviewbasicsgroup1.data.model.Animal
 import com.medkissi.recyclerviewbasicsgroup1.viewmodel.AnimalViewModel
 

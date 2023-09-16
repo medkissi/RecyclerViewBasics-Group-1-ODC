@@ -1,4 +1,4 @@
-package com.medkissi.recyclerviewbasicsgroup1
+package com.medkissi.recyclerviewbasicsgroup1.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,12 +7,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
+import com.medkissi.recyclerviewbasicsgroup1.R
 import com.medkissi.recyclerviewbasicsgroup1.data.model.Animal
 
 
 class AnimalAdapter(
     var data: List<Animal>,
-    var listner:OnItemClickListner
+    var listner: OnItemClickListner
     ) : Adapter<AnimalAdapter.AnimalViewHolder>() {
 
     inner class AnimalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView.rootView) {

@@ -1,4 +1,4 @@
-package com.medkissi.recyclerviewbasicsgroup1
+package com.medkissi.recyclerviewbasicsgroup1.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,11 +9,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.medkissi.recyclerviewbasicsgroup1.R
 import com.medkissi.recyclerviewbasicsgroupe2.model.President
 
 class PresidentAdapter(
-    val listner:OnPresidentClickListner
-):ListAdapter<President,PresidentAdapter.PresidentViewHolder>(PresidentDiffUtils()) {
+    val listner: OnPresidentClickListner
+):ListAdapter<President, PresidentAdapter.PresidentViewHolder>(PresidentDiffUtils()) {
 
     inner class PresidentViewHolder(itemView: View) : ViewHolder(itemView.rootView) {
 

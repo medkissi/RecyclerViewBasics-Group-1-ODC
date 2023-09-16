@@ -1,10 +1,13 @@
-package com.medkissi.recyclerviewbasicsgroup1
+package com.medkissi.recyclerviewbasicsgroup1.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.medkissi.recyclerviewbasicsgroup1.adapters.OnPresidentClickListner
+import com.medkissi.recyclerviewbasicsgroup1.adapters.PresidentAdapter
+import com.medkissi.recyclerviewbasicsgroup1.R
 import com.medkissi.recyclerviewbasicsgroupe2.model.President
 import com.medkissi.recyclerviewbasicsgroupe2.model.presidents
 
@@ -24,7 +27,7 @@ class PresidentActivity : AppCompatActivity(), OnPresidentClickListner {
     }
 
     override fun onClick(president: President) {
-        val intent = Intent(this,PresidentDetailActivity::class.java)
+        val intent = Intent(this, PresidentDetailActivity::class.java)
         intent.putExtra(PRESIDENT_KEY,president)
         startActivity(intent)
     }
