@@ -1,7 +1,9 @@
 # RecyclerViewBasics-Group-1-ODC
 
-### La premiere liste avec RecyclerView.Adapter
-![RecyclerView.Adapter](img/list1.png)
 
-### La deuxieme liste avec ListAdapter et DiffUtils
-![ListAdapter et Diffutils](img/list2.png)
+<table style="width:100%">
+  <tr>
+    <td><img src="img/list1.png"/></td>
+    <td><img src="img/list2.png"/></td>
+  </tr>
+</table>
