@@ -7,11 +7,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
+import com.medkissi.recyclerviewbasicsgroup1.data.model.Animal
 
 
 class AnimalAdapter(
-    val data: List<Animal>,
-    val listner:OnItemClickListner
+    var data: List<Animal>,
+    var listner:OnItemClickListner
     ) : Adapter<AnimalAdapter.AnimalViewHolder>() {
 
     inner class AnimalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView.rootView) {

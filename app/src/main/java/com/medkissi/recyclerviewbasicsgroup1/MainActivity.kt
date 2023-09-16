@@ -4,27 +4,44 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.medkissi.recyclerviewbasicsgroup1.data.model.Animal
+import com.medkissi.recyclerviewbasicsgroup1.viewmodel.AnimalViewModel
 
-const val  ANIMAL_KEY = "animal"
+const val ANIMAL_KEY = "animal"
+
 class MainActivity : AppCompatActivity(), OnItemClickListner {
+
+    val viewModel: AnimalViewModel by viewModels()
+    lateinit var adapter: AnimalAdapter
+    lateinit var rv: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val rv = findViewById<RecyclerView>(R.id.rv)
-        val adapter = AnimalAdapter(animaux,this)
-        val layoutManager = LinearLayoutManager(this )
+
+        rv = findViewById(R.id.rv)
+
+        viewModel.animaux.observe(this) { animaux ->
+            adapter = AnimalAdapter(animaux, this)
+            rv.adapter = adapter
+
+
+        }
+
+        val layoutManager = LinearLayoutManager(this)
 
         rv.layoutManager = layoutManager
-        rv.adapter = adapter
 
     }
 
     override fun onClick(animal: Animal) {
-       val intent = Intent(this,DetailActivity::class.java)
-        intent.putExtra(ANIMAL_KEY,animal)
+        val intent = Intent(this, DetailActivity::class.java)
+        intent.putExtra(ANIMAL_KEY, animal)
         startActivity(intent)
     }
+
+
 }
